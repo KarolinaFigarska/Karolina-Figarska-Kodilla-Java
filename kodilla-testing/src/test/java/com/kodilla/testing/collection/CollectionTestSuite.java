@@ -22,15 +22,14 @@ public class CollectionTestSuite {
     void testOddNumbersExterminatorEmptyList() {
         //Given
         List<Integer> list = new ArrayList<>();
-        List<Integer> checkingList = new ArrayList<>();
         OddNumberExterminator oddNumberExterminator = new OddNumberExterminator();
 
         //When
+        List<Integer> checkingList = new ArrayList<>();
         checkingList = oddNumberExterminator.exterminate(list);
-        boolean result = true;
 
         //Then
-        Assertions.assertTrue(checkingList.isEmpty() == result);
+        Assertions.assertTrue(checkingList.isEmpty());
     }
 
     @DisplayName("When the list contains an even and odd number, then comparing it with the list with" +
