@@ -25,8 +25,7 @@ public class CollectionTestSuite {
         OddNumberExterminator oddNumberExterminator = new OddNumberExterminator();
 
         //When
-        List<Integer> checkingList = new ArrayList<>();
-        checkingList = oddNumberExterminator.exterminate(list);
+        List<Integer> checkingList = oddNumberExterminator.exterminate(list);
 
         //Then
         Assertions.assertTrue(checkingList.isEmpty());
@@ -46,9 +45,9 @@ public class CollectionTestSuite {
         OddNumberExterminator oddNumberExterminator = new OddNumberExterminator();
 
         //When
-        oddNumberExterminator.exterminate(list);
+        List<Integer> temporaryList = oddNumberExterminator.exterminate(list);
 
         //Then
-        Assertions.assertEquals(checkingList,oddNumberExterminator.exterminate(list));
+        Assertions.assertEquals(checkingList,temporaryList);
     }
 }

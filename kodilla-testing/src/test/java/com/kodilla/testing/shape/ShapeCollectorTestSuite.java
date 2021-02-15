@@ -37,13 +37,12 @@ class ShapeCollectorTestSuite {
         public void testGetFigure() {
             //Given
             ShapeCollector shapeCollector = new ShapeCollector();
-            shapeCollector.addFigure(new Circle(3.5));
-            shapeCollector.addFigure(new Triangle(2.5,5.6));
-            shapeCollector.addFigure(new Square(4.0));
+            Shape circle = new Circle(2.5);
+            shapeCollector.addFigure(circle);
             //When
-            Shape square = shapeCollector.getFigure(2);
+            Shape retrivedCircle = shapeCollector.getFigure(0);
             //Then
-            Assertions.assertEquals(square, new Square(4.0));
+            Assertions.assertEquals(circle,retrivedCircle);
         }
 
         @Test
