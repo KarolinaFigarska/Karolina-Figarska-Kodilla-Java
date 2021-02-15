@@ -18,6 +18,7 @@ public class ShapeCollector  {
         }
     }
 
+
     public Shape getFigure(int n) {
         if (n >= 0 && n < list.size()) {
             return list.get(n);
