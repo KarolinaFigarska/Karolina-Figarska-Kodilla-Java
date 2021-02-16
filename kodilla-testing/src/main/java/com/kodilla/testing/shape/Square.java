@@ -3,7 +3,7 @@ package com.kodilla.testing.shape;
 public class Square implements Shape {
 
     private double sideSquare;
-    String shapeName;
+    private String shapeName;
 
     public Square(double sideSquare) {
         this.sideSquare = sideSquare;
