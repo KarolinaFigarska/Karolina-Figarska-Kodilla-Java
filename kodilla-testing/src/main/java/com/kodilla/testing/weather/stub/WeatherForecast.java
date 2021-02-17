@@ -20,21 +20,20 @@ public class WeatherForecast {
     }
 
     public double averageTemperature() {
-        double average =0;
-        int counter=0;
-        for (Map.Entry<String, Double> temperature : temperatures.getTemperatures().entrySet()) {
-            counter++;
-            average = average + temperature.getValue();
+        double sum =0;
+
+        Map<String, Double> temperatures = this.temperatures.getTemperatures();
+        for (Map.Entry<String, Double> temperature : temperatures.entrySet()) {
+            sum = sum + temperature.getValue();
         }
-        return average/counter;
+        return sum/ temperatures.size();
     }
 
     public double medianTemperature() {
-        List<Double> listOfTemperatures = new ArrayList<>();
         double median;
-        for (Map.Entry<String, Double> temperature : temperatures.getTemperatures().entrySet()) {
-            listOfTemperatures.add(temperature.getValue());
-        }
+
+        List<Double> listOfTemperatures = new ArrayList<>(temperatures.getTemperatures().values());
+
         Collections.sort(listOfTemperatures);
         double middleElement = listOfTemperatures.get((listOfTemperatures.size()-1)/2);
         if (listOfTemperatures.size() % 2 ==0) {
