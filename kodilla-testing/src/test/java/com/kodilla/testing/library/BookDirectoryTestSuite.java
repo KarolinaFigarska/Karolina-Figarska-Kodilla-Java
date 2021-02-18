@@ -18,7 +18,6 @@ public class BookDirectoryTestSuite {
     @Mock
     private LibraryDatabase libraryDatabaseMock;
 
-
     @Test
     void testListBooksWithConditionsReturnList() {
 
