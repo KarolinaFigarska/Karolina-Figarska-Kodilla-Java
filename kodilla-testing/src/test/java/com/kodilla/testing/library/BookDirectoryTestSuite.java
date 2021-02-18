@@ -89,25 +89,46 @@ public class BookDirectoryTestSuite {
     }
 
     @Test
-    void testlistBooksInHandsOf() {
+    void testlistOfFiveBooksInHandsOf() {
+        // Given
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+        List<Book> resultListOf0Books = new ArrayList<>();
+        List<Book> resultListOf5Books = generateListOfNBooks(5);
+        when(libraryDatabaseMock.listBooksWithCondition("FiveBooks")).thenReturn(resultListOf5Books);
 
+        // When
+        List<Book> theListOfBooks5 = bookLibrary.listBooksWithCondition("FiveBooks");
+
+        // Then
+        assertEquals(5, theListOfBooks5.size());
+    }
+
+    @Test
+    void testlistOfZeroBooksInHandsOf() {
+        // Given
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+        List<Book> resultListOf0Books = new ArrayList<>();
+        when(libraryDatabaseMock.listBooksWithCondition("ZeroBooks")).thenReturn(resultListOf0Books);
+
+        // When
+        List<Book> theListOfBooks0 = bookLibrary.listBooksWithCondition("ZeroBooks");
+
+        // Then
+        assertEquals(0, theListOfBooks0.size());
+    }
+
+    @Test
+    void testlistOfOneBooksInHandsOf() {
         // Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         List<Book> resultListOf0Books = new ArrayList<>();
         List<Book> resultListOf1Books = generateListOfNBooks(1);
-        List<Book> resultListOf5Books = generateListOfNBooks(5);
-        when(libraryDatabaseMock.listBooksWithCondition("ZeroBooks")).thenReturn(resultListOf0Books);
         when(libraryDatabaseMock.listBooksWithCondition("OneBooks")).thenReturn(resultListOf1Books);
-        when(libraryDatabaseMock.listBooksWithCondition("FiveBooks")).thenReturn(resultListOf5Books);
 
         // When
-        List<Book> theListOfBooks0 = bookLibrary.listBooksWithCondition("ZeroBooks");
         List<Book> theListOfBooks1 = bookLibrary.listBooksWithCondition("OneBooks");
-        List<Book> theListOfBooks5 = bookLibrary.listBooksWithCondition("FiveBooks");
 
         // Then
-        assertEquals(0, theListOfBooks0.size());
         assertEquals(1, theListOfBooks1.size());
-        assertEquals(5, theListOfBooks5.size());
     }
 }
