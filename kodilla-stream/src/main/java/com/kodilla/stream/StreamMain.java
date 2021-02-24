@@ -1,12 +1,10 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.book.Book;
 import com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.forumuser.ForumUser;
 
 import java.util.Map;
 import java.util.stream.Collectors;
-
 public class StreamMain {
 
     public static void main(String[] args) {
@@ -14,7 +12,7 @@ public class StreamMain {
         Forum forum = new Forum();
         Map<Integer, ForumUser> theMapOfForumUser = forum.getUserList().stream()
                 .filter(forumUser -> forumUser.getSex() == 'M')
-                .filter(forumUser -> forumUser.getYearOfBirth() <= 2001)
+                .filter(forumUser -> forumUser.currentAge(2021) >= 20)
                 .filter((forumUser -> forumUser.getNumberOfPosts() >= 1))
                 .collect(Collectors.toMap(ForumUser::getIdNumber, forumUser -> forumUser));
 
@@ -23,3 +21,7 @@ public class StreamMain {
                 .forEach(System.out::println);
     }
 }
+
+
+
+

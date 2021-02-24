@@ -48,4 +48,9 @@ public final class ForumUser {
                 ", numberOfPosts=" + numberOfPosts +
                 '}';
     }
+
+    public int currentAge(int currentYear) {
+        int birthYear = getYearOfBirth();
+        return (currentYear -birthYear);
+    }
 }
