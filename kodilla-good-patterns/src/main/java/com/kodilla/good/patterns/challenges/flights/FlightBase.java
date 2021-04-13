@@ -9,37 +9,37 @@ public final class FlightBase {
     public FlightBase() {
         mapOfFlights = new HashMap<>();
 
-        mapOfFlights.put(Flight.getKATOWICE(), new ArrayList<>(
+        mapOfFlights.put(Cities.getKATOWICE(), new ArrayList<>(
                 Arrays.asList(
-                        Flight.getGDANSK(),
-                        Flight.getBYDGOSZCZ()
+                        Cities.getGDANSK(),
+                        Cities.getBYDGOSZCZ()
                 )
         ));
 
-        mapOfFlights.put(Flight.getWROCLAW(), new ArrayList<>(
+        mapOfFlights.put(Cities.getWROCLAW(), new ArrayList<>(
                 Arrays.asList(
-                        Flight.getSZCZECIN(),
-                        Flight.getGDANSK(),
-                        Flight.getBYDGOSZCZ()
+                        Cities.getSZCZECIN(),
+                        Cities.getGDANSK(),
+                        Cities.getBYDGOSZCZ()
                 )
         ));
 
-        mapOfFlights.put(Flight.getGDANSK(), new ArrayList<>(
+        mapOfFlights.put(Cities.getGDANSK(), new ArrayList<>(
                 Arrays.asList(
-                        Flight.getKATOWICE(),
-                        Flight.getWROCLAW()
+                        Cities.getKATOWICE(),
+                        Cities.getWROCLAW()
                 )
         ));
 
-        mapOfFlights.put(Flight.getBYDGOSZCZ(), new ArrayList<>(
+        mapOfFlights.put(Cities.getBYDGOSZCZ(), new ArrayList<>(
                 Arrays.asList(
-                        Flight.getKATOWICE()
+                        Cities.getKATOWICE()
                 )
         ));
 
-        mapOfFlights.put(Flight.getSZCZECIN(), new ArrayList<>(
+        mapOfFlights.put(Cities.getSZCZECIN(), new ArrayList<>(
                 Arrays.asList(
-                        Flight.getWROCLAW()
+                        Cities.getWROCLAW()
                 )
         ));
     }

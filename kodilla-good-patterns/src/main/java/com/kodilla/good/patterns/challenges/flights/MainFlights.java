@@ -1,13 +1,18 @@
 package com.kodilla.good.patterns.challenges.flights;
 
+
 public class MainFlights {
-    public static void run(){
-        FlightSearch.flightFrom(Flight.getKATOWICE());
-        FlightSearch.flightFrom(Flight.getBYDGOSZCZ());
+    public static void main(String[] args) {
 
-        FlightSearch.flightTo(Flight.getKATOWICE());
-        FlightSearch.flightTo(Flight.getWROCLAW());
+        FlightSearch flightSearchNr1 = new FlightSearch();
 
-        FlightSearch.flightTransfer(Flight.getKATOWICE(),Flight.getWROCLAW());
+        Flight flightNr1 = flightSearchNr1.flightFrom(Cities.getKATOWICE());
+        System.out.println(flightNr1);
+
+        Flight flightNr2 = flightSearchNr1.flightTo(Cities.getKATOWICE());
+        System.out.println(flightNr2);
+
+        Flight flightNr3 = flightSearchNr1.flightTransfer(Cities.getKATOWICE(), Cities.getWROCLAW());
+        System.out.println(flightNr3);
     }
 }

@@ -2,30 +2,32 @@ package com.kodilla.good.patterns.challenges.flights;
 
 public class Flight {
 
-    private static final String KATOWICE = "KATOWICE";
-    private static final String WROCLAW = "WROCLAW";
-    private static final String GDANSK = "GDANSK";
-    private static final String SZCZECIN = "SZCZECIN";
-    private static final String BYDGOSZCZ = "BYDGOSZCZ";
+    private String departure;
+    private String arrival;
+    private String transfer;
 
-
-    public static String getKATOWICE() {
-        return KATOWICE;
+    public Flight(String departure, String arrival) {
+        this.departure = departure;
+        this.arrival = arrival;
     }
 
-    public static String getWROCLAW() {
-        return WROCLAW;
+    public Flight(String departure, String arrival, String transfer) {
+        this.departure = departure;
+        this.arrival = arrival;
+        this.transfer = transfer;
     }
 
-    public static String getGDANSK() {
-        return GDANSK;
-    }
-
-    public static String getSZCZECIN() {
-        return SZCZECIN;
-    }
-
-    public static String getBYDGOSZCZ() {
-        return BYDGOSZCZ;
+    @Override
+    public String toString() {
+        if (transfer == null) {
+            return "Flight: " +
+                    "departure ='" + departure + '\'' +
+                    ", arrival ='" + arrival + '\'';
+        } else {
+            return "Flight: " +
+                    "departure='" + departure + '\'' +
+                    ", arrival='" + arrival + '\'' +
+                    ", transfer='" + transfer + '\'';
+        }
     }
 }
