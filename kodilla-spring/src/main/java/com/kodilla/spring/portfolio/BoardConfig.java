@@ -13,37 +13,36 @@ public class BoardConfig {
 
     @Autowired
     @Qualifier("toDoList")
-    TaskList taskList1;
+    TaskList toDoList;
 
     @Autowired
     @Qualifier("inProgressList")
-    TaskList taskList2;
+    TaskList inProgressList;
 
     @Autowired
     @Qualifier("doneList")
-    TaskList taskList3;
+    TaskList doneList;
 
     @Bean
     public Board getBoard() {
-
-        return new Board(taskList1, taskList2, taskList3);
+        return new Board(toDoList, inProgressList, doneList);
     }
 
     @Bean(name = "toDoList")
     @Scope("prototype")
     public TaskList getTaskListOne() {
-        return new TaskList(Arrays.asList("Do: 1", "Do: 2"));
+        return new TaskList();
     }
 
     @Bean(name = "inProgressList")
     @Scope("prototype")
     public TaskList getTaskListTwo() {
-        return new TaskList(Arrays.asList("InProgress: 1", "InProgress: 2"));
+        return new TaskList();
     }
 
     @Bean(name = "doneList")
     @Scope("prototype")
     public TaskList getTaskListThree() {
-        return new TaskList(Arrays.asList("Done: 1", "Done: 2"));
+        return new TaskList();
     }
 }
