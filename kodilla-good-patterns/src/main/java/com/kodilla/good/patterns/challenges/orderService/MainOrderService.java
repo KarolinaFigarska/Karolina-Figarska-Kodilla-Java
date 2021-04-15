@@ -1,7 +1,7 @@
 package com.kodilla.good.patterns.challenges.orderService;
 
 public class MainOrderService {
-    public static void run(){
+    public static void main(String[] args){
         CreateUser createUser = new CreateUser();
 
         UserRecord donaldRecord = createUser.createUserDonald();

@@ -3,7 +3,7 @@ package com.kodilla.good.patterns.challenges.Food2Door;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Order {
+public class OrderService {
 
     private List<ProducentOrder> orderList = new ArrayList<>();
 

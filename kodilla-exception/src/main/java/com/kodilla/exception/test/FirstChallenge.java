@@ -2,8 +2,8 @@ package com.kodilla.exception.test;
 
 public class FirstChallenge {
 
-    public  double divide(double a, double b) throws ArithmeticException {
-        if (b == 0){
+    public double divide(double a, double b) throws ArithmeticException {
+        if (b == 0) {
             throw new ArithmeticException();
         }
         return a / b;
@@ -12,11 +12,11 @@ public class FirstChallenge {
     public static void main(String[] args) {
 
         FirstChallenge firstChallenge = new FirstChallenge();
-        double result=0;
+        double result = 0;
 
         try {
             result = firstChallenge.divide(3, 0);
-        } catch(ArithmeticException e) {
+        } catch (ArithmeticException e) {
             System.out.println("Error b=0");
         } finally {
             System.out.println("The result a/b: " + result);

@@ -34,8 +34,8 @@ public final class ForumUser {
         return sex;
     }
 
-    public int getYearOfBirth() {
-        return birthDate.getYear();
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
     @Override
@@ -47,10 +47,5 @@ public final class ForumUser {
                 ", birthDate=" + birthDate +
                 ", numberOfPosts=" + numberOfPosts +
                 '}';
-    }
-
-    public int currentAge(int currentYear) {
-        int birthYear = getYearOfBirth();
-        return (currentYear -birthYear);
     }
 }
