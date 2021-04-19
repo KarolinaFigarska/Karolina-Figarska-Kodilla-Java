@@ -7,11 +7,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LoggerTestSuite {
 
-    private static Logger logger;
-
     @BeforeAll
     public static void log() {
-        logger = Logger.INSTANCE;
+        Logger logger = Logger.INSTANCE;
         logger.log("loggingNr1");
     }
 
@@ -19,8 +17,8 @@ public class LoggerTestSuite {
     void testGetFileName() {
         //Given
         //When
+        Logger logger = Logger.INSTANCE;
         String lastLog = logger.getLastLog();
-        System.out.println("LastLog: " + lastLog);
         //Then
         assertEquals("loggingNr1", lastLog);
     }
