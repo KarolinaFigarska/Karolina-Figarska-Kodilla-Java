@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class FileReaderTestSuite {
 
-    @Test
+    /*@Test
     void testReadFile() {
         // given
         FileReader fileReader = new FileReader();
         // when & then
         assertDoesNotThrow(() -> fileReader.readFile());
-    }
+    }*/
 }
