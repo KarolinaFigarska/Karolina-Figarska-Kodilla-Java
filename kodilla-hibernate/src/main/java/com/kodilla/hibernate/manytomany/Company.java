@@ -10,6 +10,13 @@ import java.util.List;
         query = "SELECT * FROM COMPANIES WHERE INSTR(COMPANY_NAME, :CHARACTERS)",
         resultClass = Company.class
 )
+
+@NamedNativeQuery(
+        name = "Company.searchCompany",
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE '%%'",
+        resultClass = Company.class
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
