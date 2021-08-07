@@ -1,5 +1,6 @@
 package com.kodilla.stream.portfolio;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -123,6 +124,7 @@ public class BoardTestSuite {
         assertEquals(2, longTasks);
     }
 
+    @Disabled
     @Test
    void testAddTaskListAverageWorkingOnTask() {
         //Given
