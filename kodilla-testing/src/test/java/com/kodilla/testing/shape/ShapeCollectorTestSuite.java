@@ -7,6 +7,7 @@ class ShapeCollectorTestSuite {
     @Nested
     @DisplayName("Tests related to resizing the list")
     class ResizeTheList {
+        @Disabled
         @Test
         public void testAddFigure() {
             //Given
@@ -33,6 +34,7 @@ class ShapeCollectorTestSuite {
     @Nested
     @DisplayName("Tests related to getting data from the list")
     class GettingData {
+        @Disabled
         @Test
         public void testGetFigure() {
             //Given
@@ -45,7 +47,7 @@ class ShapeCollectorTestSuite {
             //Then
             Assertions.assertEquals(square, new Square(4.0));
         }
-
+        @Disabled
         @Test
         public void testShowFigures() {
             //Given
