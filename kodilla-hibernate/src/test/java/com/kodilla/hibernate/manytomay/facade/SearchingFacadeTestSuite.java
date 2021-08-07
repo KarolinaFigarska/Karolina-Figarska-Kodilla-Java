@@ -6,6 +6,7 @@ import com.kodilla.hibernate.manytomany.facade.CompanyDto;
 import com.kodilla.hibernate.manytomany.facade.EmployeeDto;
 import com.kodilla.hibernate.manytomany.facade.SearchingException;
 import com.kodilla.hibernate.manytomany.facade.SearchingFacade;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,6 +23,7 @@ public class SearchingFacadeTestSuite {
     @Autowired
     private EmployeeDao employeeDao;
 
+    @Disabled
     @Test
     void testFindCompany() {
         CompanyDto companyDto = new CompanyDto("Kodilla");
@@ -31,7 +33,7 @@ public class SearchingFacadeTestSuite {
 
         }
     }
-
+    @Disabled
     @Test
     void testFindWorker() {
         EmployeeDto employeeDto = new EmployeeDto("Grisham");
