@@ -3,6 +3,7 @@ package com.kodilla.stream.portfolio;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -141,27 +142,13 @@ public class BoardTestSuite {
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .map(Task::getCreated)
-                .map(tl-> tl.getDayOfMonth())
-                .map(tl -> LocalDate.now().getDayOfMonth() - tl)
+                .map(tl-> Period.between(LocalDate.now(),tl))
+                .mapToInt( Period::getDays)
+                .map(tl -> Math.abs(tl))
                 .reduce(0,(sum, current) -> sum + current);
 
-        // We try to fix the assertion here:
-        // This part is a play ground
-        List<LocalDate> myList1 = new ArrayList<>();
-        myList1 = project.getTaskLists().stream()
-                .filter(inProgressTasks::contains)
-                .flatMap(tl -> tl.getTasks().stream())
-                .map(Task::getCreated)
-                .collect(toList());
-
-        System.out.println(sumAllDays);
-        System.out.println(numberOfTasks);
-        System.out.println(myList1);
-
-        // The assertion is temporary disable
-
         //Then
-        // assertEquals(10, sumAllDays/numberOfTasks);
+         assertEquals(10, sumAllDays/numberOfTasks);
     }
 }
 
