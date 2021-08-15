@@ -16,15 +16,15 @@ public class Main {
 
         // Zadanie 13.4
         MainFood2Door mainFood2Door = new MainFood2Door();
-        // mainFood2Door.run();
+        mainFood2Door.run();
 
         // Zadanie 13.2
         MainOrderService mainOrderService = new MainOrderService();
-        // mainOrderService.run();
+        mainOrderService.run();
 
         // Zadanie 13.1
         MainMovieStore mainMovieStore = new MainMovieStore();
-        // mainMovieStore.run();
+        mainMovieStore.run();
 
     }
 }
